@@ -56,7 +56,7 @@ const convertArrayToSet = (value) => {
     mySet.add(item);
   });
 };
-const displayBoxColor = (index, checkLen) => {
+const displayBoxColor = (index) => {
   const showBox = document.querySelectorAll(".display-box");
   for (let i = 0; i <= showBox.length - 1; i++) {
     if (i <= index) {
@@ -123,6 +123,10 @@ const displayPassword = () => {
   let allValues = Array.from(mySet);
 
   // Retrieve the random element from the array
+  if (+numberInput.textContent < 8) {
+    alert(`Your password must be 8 characters and above `);
+    return;
+  }
   for (let i = 0; i < +numberInput.textContent; i++) {
     const randomIndex = Math.floor(Math.random() * allValues.length);
     password.push(allValues[randomIndex]);
