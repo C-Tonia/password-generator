@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <section>
+      <div class="section-container">
+        <p class="heading">Password Generator</p>
+
+        <div class="generated-password-wrapper">
+          <div class="pass-wrapper">
+            <p class="password">GHYJUIZV</p>
+          </div>
+          <p class="copied">Copied!!!</p>
+          <div class="copy"><i class="bx bx-copy"></i></div>
+        </div>
+
+        <div class="holder">
+          <div class="length-wrapper">
+            <p class="text">Character Length</p>
+            <output class="length" id="rangevalue">10</output>
+          </div>
+          <div class="range-container">
+            <input
+              type="range"
+              max="20"
+              min="0"
+              step="1"
+              oninput="rangevalue.value=value"
+              name=""
+              id=""
+            />
+          </div>
+
+          <div class="checkbox-wrapper">
+            <div class="options">
+              <input type="checkbox" value="uppercase" name="" id="" />
+              <span>Include Uppercase</span>
+            </div>
+            <div class="options">
+              <input type="checkbox" value="lowercase" name="" id="" />
+              <span>Include LowerCase</span>
+            </div>
+            <div class="options">
+              <input type="checkbox" value="numbers" name="" id="" />
+              <span>Include Numbers</span>
+            </div>
+            <div class="options">
+              <input type="checkbox" value="symbols" id="" />
+              <span>Include Symbols</span>
+            </div>
+          </div>
+          <div class="strength-wrapper">
+            <p class="">Strength</p>
+            <div class="strength-display">
+              <h3 class="strength"></h3>
+              <div class="low display-box"></div>
+              <div class="weak display-box"></div>
+              <div class="medium display-box"></div>
+              <div class="strong display-box"></div>
+            </div>
+          </div>
+          <button class="btn">Generate</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
