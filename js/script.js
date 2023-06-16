@@ -78,7 +78,7 @@ function updatePasswordStrength() {
     displayBoxColor(-1);
     strengthEl.textContent = " ";
     passwordEl.textContent = " ";
-    alert(`Select the character's  your password should contain`);
+    alert(`Select the character's your password should contain`);
     return;
   } else if (checkboxLen === 1) {
     strengthEl.textContent = "low";
@@ -130,10 +130,14 @@ const displayPassword = () => {
   passwordEl.textContent = password.join("");
   // console.log(allValues);
 };
-rangeInputs.addEventListener("input", handleInputChange);
-btnEl.addEventListener("click", displayPassword);
-handleInputChange();
-copyEl.addEventListener("click", function () {
+const copyToClip = function () {
+  const allCheckBox = document.querySelectorAll(
+    "input[type = checkbox]:checked"
+  );
+  if (allCheckBox.length === 0) {
+    alert(`Select the character's your password should contain`);
+    return;
+  }
   // Get the text field
   let copyText = document.querySelector(".password").textContent;
   let copyAlert = document.querySelector(".copied");
@@ -143,4 +147,8 @@ copyEl.addEventListener("click", function () {
     copyAlert.style.display = "block";
     setTimeout(() => (copyAlert.style.display = "none"), 3000);
   });
-});
+};
+rangeInputs.addEventListener("input", handleInputChange);
+btnEl.addEventListener("click", displayPassword);
+handleInputChange();
+copyEl.addEventListener("click", copyToClip);

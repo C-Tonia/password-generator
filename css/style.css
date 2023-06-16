@@ -47,6 +47,10 @@ section {
   font-size: 2.5rem;
   font-family: "Playfair", serif;
   font-weight: 700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .pass-wrapper {
   width: 60%;
